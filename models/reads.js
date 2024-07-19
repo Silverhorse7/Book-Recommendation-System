@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const BorrowedBook = sequelize.define(
-    "BorrowedBook",
+  const Read = sequelize.define(
+    "Read",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -30,12 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  BorrowedBook.associate = (models) => {
-    BorrowedBook.belongsTo(models.Book, {
+  Read.associate = (models) => {
+    Read.belongsTo(models.Book, {
       foreignKey: "bookId",
       as: "book",
     });
   };
 
-  return BorrowedBook;
+  return Read;
 };
