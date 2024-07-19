@@ -32,7 +32,7 @@ The Book Recommendation System is a web application that allows users to manage 
 | num_of_pages      | Integer | Total number of pages in the book           |
 | num_of_read_pages | Integer | Number of pages read by the user            |
 
-### Borrowed Books Table
+### Reads Table
 
 | Column  | Type    | Description                                  |
 |---------|---------|-----------------------------------------------|
@@ -75,7 +75,7 @@ The Book Recommendation System is a web application that allows users to manage 
 - `GET /api/v1/Recommend`
   - Response: `{ books: [ { id, title, num_of_pages, num_of_read_pages, CreatedAt, UpdatedAt } ] }`
 
-### Borrowed Books
+### Reads
 
 - `GET /api/v1/transactions`
   - Response: `{ transactions: [ { book_id, left, right, CreatedAt, UpdatedAt } ] }`
