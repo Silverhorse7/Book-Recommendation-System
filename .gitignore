@@ -1,2 +1,5 @@
 /tests_scripts
 .sequelizerc
+
+# node_modules
+node_modules/
