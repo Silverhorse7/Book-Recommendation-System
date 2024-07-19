@@ -1,7 +1,7 @@
 const express = require("express");
 const UserController = require("../controllers/UserController");
 const BookController = require("../controllers/BookController");
-const BorrowBookController = require("../controllers/BorrowedBooks");
+const ReadController = require("../controllers/ReadController");
 
 const authenticate = require("../middleware/authenticate");
 const ensureIsAdmin = require("../middleware/ensureIsAdmin");
@@ -34,7 +34,7 @@ router
     "/transactions",
     authenticate,
     ensureIsAdmin,
-    BorrowBookController.showTransactions
+    ReadController.showTransactions
   )
 
   // Send a message if route does not exist

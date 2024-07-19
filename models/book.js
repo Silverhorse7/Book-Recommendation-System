@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Book.associate = (models) => {
-    Book.hasMany(models.BorrowedBook, {
+    Book.hasMany(models.Read, {
       foreignKey: "bookId",
-      as: "borrowedBooks",
+      as: "Read",
     });
   };
 

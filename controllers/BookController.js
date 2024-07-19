@@ -5,7 +5,7 @@ const { sequelize } = require("../models");
 
 var Book = require("../models").Book;
 var User = require("../models").User;
-const BorrowedBook = require("../models").BorrowedBook;
+const Read = require("../models").Read  ;
 const { Op } = require("sequelize");
 
 const BookController = {
@@ -35,7 +35,7 @@ const BookController = {
         }
 
         const [minRange, maxRange] = await Promise.all([
-          BorrowedBook.findOne({
+          Read.findOne({
             where: {
               bookId: book_id,
               left: { [Op.lte]: end_page },
@@ -44,7 +44,7 @@ const BookController = {
             order: [["left", "ASC"]],
             transaction: t,
           }),
-          BorrowedBook.findOne({
+          Read.findOne({
             where: {
               bookId: book_id,
               left: { [Op.lte]: end_page },
@@ -63,7 +63,7 @@ const BookController = {
           : end_page;
 
         // Calculate pages to be deleted
-        const rangesToDelete = await BorrowedBook.findAll({
+        const rangesToDelete = await Read.findAll({
           where: {
             bookId: book_id,
             [Op.or]: [
@@ -86,7 +86,7 @@ const BookController = {
         );
 
         // Delete the ranges
-        await BorrowedBook.destroy({
+        await Read.destroy({
           where: {
             id: rangesToDelete.map((range) => range.id),
           },
@@ -94,7 +94,7 @@ const BookController = {
         });
 
         // Create new range
-        await BorrowedBook.create(
+        await Read.create(
           { bookId: book_id, left: newLeft, right: newRight },
           { transaction: t }
         );

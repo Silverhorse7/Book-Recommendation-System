@@ -4,7 +4,7 @@ const User = require("../models").User;
 const Book = require("../models").Book;
 const getJWT = require("../helpers/helpers").getJWT;
 const { Op } = require("sequelize");
-const BorrowedBook = require("../models").BorrowedBook;
+const Read = require("../models").Read;
 
 dotenv.config();
 
