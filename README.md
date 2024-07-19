@@ -80,6 +80,7 @@ The Book Recommendation System is a web application that allows users to manage 
 - `GET /api/v1/transactions`
   - Response: `{ transactions: [ { book_id, left, right, CreatedAt, UpdatedAt } ] }`
 
+
 ## Technologies Used
 
 - Node.js
@@ -89,3 +90,6 @@ The Book Recommendation System is a web application that allows users to manage 
 - JSON Web Tokens (JWT) for authentication
 - Bcrypt for password hashing
 - Faker for generating fake data
+
+## Implementation Architecture
+- MVC
