@@ -42,7 +42,7 @@ The Book Recommendation System is a web application that allows users to manage 
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-repo/book-recommendation-system.git`
+1. Clone the repository: `git clone https://github.com/silverhorse7/book-recommendation-system.git`
 2. Navigate to the project directory: `cd book-recommendation-system`
 3. Install dependencies: `npm install`
 4. Set up the database: `npm run migrate:dev`
